@@ -33,21 +33,6 @@ for (let k = 0; k < tabsAdd.length; k++) {
 	});
 }
 
-// for (let n = 0; n < tabsInput.length; n++) {
-// 	tabsInput[n].addEventListener("input", function () {
-// 		tabsInput[n].value = tabsInput[n].value.replace(
-// 			/[^?!,.а-яА-Я0-9\s]+$/,
-// 			""
-// 		);
-// 		// let p = this.parentElement.querySelector("p");
-// 		// if (tabsInput[n].value == "") {
-// 		// 	p.style.display = "block";
-// 		// } else {
-// 		// 	p.style.display = "none";
-// 		// }
-// 	});
-// }
-
 for (let n = 0; n < tabsInput.length; n++) {
 	tabsInput[n].addEventListener("input", function () {
 		var re = /[^?!,.а-яА-Я0-9\s]+$/;
@@ -55,30 +40,13 @@ for (let n = 0; n < tabsInput.length; n++) {
 		if (!re.test(tabsInput[n].value)) {
 			tabsInput[n].style.border = "green solid 3px";
 			p.style.display = "none";
+			tabsAdd[n].removeAttribute('disabled');
 			return true;
 		} else {
 			tabsInput[n].style.border = "red solid 3px";
 			p.style.display = "block";
+			tabsAdd[n].setAttribute('disabled', true);
 			return false;
 		}
 	});
 }
-
-// function validate() {
-// 	var user = document.getElementById("e").value;
-// 	var user2 = document.getElementById("e");
-// 	var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-// 	if (re.test(user)) {
-// 		alert("done");
-// 		return true;
-// 	} else {
-// 		user2.style.border = "red solid 3px";
-// 		return false;
-// 	}
-// }
-
-// let input = document.querySelector("input");
-
-// input.addEventListener("input", () => {
-// 	input.value = input.value.replace(/[^а-я]/, "");
-// });
